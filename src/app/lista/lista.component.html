@@ -1,1 +1,19 @@
-<p>lista works!</p>
+<table class="table table-striped table-hover">
+    <thead >
+      <tr >
+        <th scope="col">#</th>
+        <th *ngFor="let cabecera of cabeceras" scope="col">{{cabecera}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of listaPersonas; let indice=index">
+        <th scope="row">{{indice+1}}</th>
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.apellidos}}</td>
+        <td>{{persona.empresa}}</td>
+        <td>{{persona.email}}</td>
+        <td>{{persona.telefono}}</td>
+      </tr>
+
+    </tbody>
+  </table>
