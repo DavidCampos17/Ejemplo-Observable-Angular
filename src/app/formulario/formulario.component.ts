@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { PersonasService } from '../personas.service';
 
 @Component({
   selector: 'app-formulario',
@@ -9,14 +10,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class FormularioComponent implements OnInit {
 
   formulario: FormGroup;
-  constructor() 
+  constructor(private personaService:PersonasService) 
   { 
     this.formulario= new FormGroup({
-      nombre: new FormControl(''),
-      apellidos: new FormControl(''),
-      empresa: new FormControl(''),
-      telefono: new FormControl(''),
-      email: new FormControl(''),
+      nombre: new FormControl('David'),
+      apellidos: new FormControl('Campos Castro'),
+      empresa: new FormControl('Empresa A'),
+      telefono: new FormControl('8888-8888'),
+      email: new FormControl('email@gmail.com'),
     });    
   }
 
@@ -24,6 +25,8 @@ export class FormularioComponent implements OnInit {
   }
 
   onSubmit()
-  {}
+  {
+    this.personaService.agregarPersona(this.formulario.value);
+  }
 
 }

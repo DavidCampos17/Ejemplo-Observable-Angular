@@ -1,25 +1,23 @@
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <label for="nombre" class="form contro">Nombre</label>
+        <label for="nombre" class="form-label">Nombre</label>
         <input type="text" formControlName="nombre" class="form-control">
     </div>
     <div class="form-group">
-        <label for="" class="form-control">Apellidos</label>
+        <label for="" class="form-label">Apellidos</label>
         <input formControlName="apellidos" type="text" class="form-control">
     </div>
     <div class="form-group">
-        <label for="" class="form-control">Empresa</label>
+        <label for="" class="form-label">Empresa</label>
         <input formControlName="empresa" type="text" class="form-control">
     </div>
     <div class="form-group">
-        <label for="" class="form-control">Telefono</label>
+        <label for="" class="form-label">Telefono</label>
         <input formControlName="telefono" type="text" class="form-control">
     </div>
-    <div class="form-group">
-        <label for="" class="form-control">Email</label>
+    <div class="form-group mb-3">
+        <label for="" class="form-label">Email</label>
         <input formControlName="email" type="text" class="form-control">
     </div>
-    <div class="form-group">
-        <button type="submit">Enviar</button>
-    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
